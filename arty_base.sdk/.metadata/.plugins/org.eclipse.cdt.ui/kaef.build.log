@@ -1,0 +1,431 @@
+15:57:00 **** Build of configuration Debug for project Kaef ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../Kaef_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:98:
+../src/xsysmon.h:483:1: error: expected identifier or '(' before '{' token
+ {
+ ^
+../src/xsysmon.h:482:14: warning: return type defaults to 'int' [-Wimplicit-int]
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:565:1: note: in expansion of macro 'void'
+ void XSysMon_Reset(XSysMon *InstancePtr);
+ ^~~~
+../src/xsysmon.h: In function 'InitializePotentio':
+../src/xsysmon.h:565:6: error: expected declaration specifiers before 'XSysMon_Reset'
+ void XSysMon_Reset(XSysMon *InstancePtr);
+      ^~~~~~~~~~~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:571:1: note: in expansion of macro 'void'
+ void XSysMon_StartAdcConversion(XSysMon *InstancePtr);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:573:1: note: in expansion of macro 'void'
+ void XSysMon_ResetAdc(XSysMon *InstancePtr);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:581:1: note: in expansion of macro 'void'
+ void XSysMon_SetAvg(XSysMon *InstancePtr, u8 Average);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:588:1: note: in expansion of macro 'void'
+ void XSysMon_SetAlarmEnables(XSysMon *InstancePtr, u32 AlmEnableMask);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:591:1: note: in expansion of macro 'void'
+ void XSysMon_SetCalibEnables(XSysMon *InstancePtr, u16 Calibration);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:594:1: note: in expansion of macro 'void'
+ void XSysMon_SetSequencerMode(XSysMon *InstancePtr, u8 SequencerMode);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:596:1: note: in expansion of macro 'void'
+ void XSysMon_SetSequencerEvent(XSysMon *InstancePtr, int IsEventMode);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:598:1: note: in expansion of macro 'void'
+ void XSysMon_SetExtenalMux(XSysMon *InstancePtr, u8 Channel);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:600:1: note: in expansion of macro 'void'
+ void XSysMon_SetAdcClkDivisor(XSysMon *InstancePtr, u8 Divisor);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:615:1: note: in expansion of macro 'void'
+ void XSysMon_SetAlarmThreshold(XSysMon *InstancePtr, u8 AlarmThrReg, u16 Value);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:618:1: note: in expansion of macro 'void'
+ void XSysMon_SetOverTemp(XSysMon *InstancePtr, u16 Value);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:621:1: note: in expansion of macro 'void'
+ void XSysMon_EnableUserOverTemp(XSysMon *InstancePtr);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:622:1: note: in expansion of macro 'void'
+ void XSysMon_DisableUserOverTemp(XSysMon *InstancePtr);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:624:1: note: in expansion of macro 'void'
+ void XSysMon_EnableTempUpdate(XSysMon *InstancePtr);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:625:1: note: in expansion of macro 'void'
+ void XSysMon_DisableTempUpdate(XSysMon *InstancePtr);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:626:1: note: in expansion of macro 'void'
+ void XSysMon_SetTempWaitCycles(XSysMon *InstancePtr, u16 WaitCycles);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:637:1: note: in expansion of macro 'void'
+ void XSysMon_IntrGlobalEnable(XSysMon *InstancePtr);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:638:1: note: in expansion of macro 'void'
+ void XSysMon_IntrGlobalDisable(XSysMon *InstancePtr);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:640:1: note: in expansion of macro 'void'
+ void XSysMon_IntrEnable(XSysMon *InstancePtr, u32 Mask);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:641:1: note: in expansion of macro 'void'
+ void XSysMon_IntrDisable(XSysMon *InstancePtr, u32 Mask);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:645:1: note: in expansion of macro 'void'
+ void XSysMon_IntrClear(XSysMon *InstancePtr, u32 Mask);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected specifier-qualifier-list before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../../Kaef_bsp/microblaze_0/include/xintc_l.h:164:2: note: in expansion of macro 'void'
+  void *CallBackRef;
+  ^~~~
+In file included from ../src/xintc.h:221,
+                 from ../src/helloworld.c:99:
+../../Kaef_bsp/microblaze_0/include/xintc_l.h:165:3: error: storage class specified for parameter 'XIntc_VectorTableEntry'
+ } XIntc_VectorTableEntry;
+   ^~~~~~~~~~~~~~~~~~~~~~
+../../Kaef_bsp/microblaze_0/include/xintc_l.h:167:15: error: expected declaration specifiers or '...' before '*' token
+ typedef void (*XFastInterruptHandler) (void);
+               ^
+In file included from ../src/helloworld.c:98:
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../../Kaef_bsp/microblaze_0/include/xintc_l.h:311:1: note: in expansion of macro 'void'
+ void XIntc_LowLevelInterruptHandler(void);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../../Kaef_bsp/microblaze_0/include/xintc_l.h:312:1: note: in expansion of macro 'void'
+ void XIntc_DeviceInterruptHandler(void *DeviceId);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../../Kaef_bsp/microblaze_0/include/xintc_l.h:315:1: note: in expansion of macro 'void'
+ void XIntc_SetIntrSvcOption(UINTPTR BaseAddress, int Option);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../../Kaef_bsp/microblaze_0/include/xintc_l.h:317:1: note: in expansion of macro 'void'
+ void XIntc_RegisterHandler(UINTPTR BaseAddress, int InterruptId,
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../../Kaef_bsp/microblaze_0/include/xintc_l.h:320:1: note: in expansion of macro 'void'
+ void XIntc_RegisterFastHandler(UINTPTR BaseAddress, u8 Id,
+ ^~~~
+In file included from ../src/helloworld.c:99:
+../src/xintc.h:300:2: error: expected specifier-qualifier-list before 'XIntc_VectorTableEntry'
+  XIntc_VectorTableEntry HandlerTable[XPAR_XTTCPS_NUM_INSTANCES];
+  ^~~~~~~~~~~~~~~~~~~~~~
+../src/xintc.h:303:3: error: storage class specified for parameter 'XIntc_Config'
+ } XIntc_Config;
+   ^~~~~~~~~~~~
+../src/xintc.h:315:2: error: expected specifier-qualifier-list before 'XIntc_Config'
+  XIntc_Config *CfgPtr;  /**< Pointer to instance config entry */
+  ^~~~~~~~~~~~
+../src/xintc.h:317:3: error: storage class specified for parameter 'XIntc'
+ } XIntc;
+   ^~~~~
+../src/xintc.h:326:22: error: expected declaration specifiers or '...' before 'XIntc'
+ int XIntc_Initialize(XIntc * InstancePtr, u16 DeviceId);
+                      ^~~~~
+../src/xintc.h:328:17: error: expected declaration specifiers or '...' before 'XIntc'
+ int XIntc_Start(XIntc * InstancePtr, u8 Mode);
+                 ^~~~~
+In file included from ../src/helloworld.c:98:
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xintc.h:329:1: note: in expansion of macro 'void'
+ void XIntc_Stop(XIntc * InstancePtr);
+ ^~~~
+In file included from ../src/helloworld.c:99:
+../src/xintc.h:331:19: error: expected declaration specifiers or '...' before 'XIntc'
+ int XIntc_Connect(XIntc * InstancePtr, u8 Id,
+                   ^~~~~
+In file included from ../src/helloworld.c:98:
+../src/xsysmon.h:482:14: error: expected declaration specifiers or '...' before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xintc.h:332:32: note: in expansion of macro 'void'
+     XInterruptHandler Handler, void *CallBackRef);
+                                ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xintc.h:333:1: note: in expansion of macro 'void'
+ void XIntc_Disconnect(XIntc * InstancePtr, u8 Id);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xintc.h:335:1: note: in expansion of macro 'void'
+ void XIntc_Enable(XIntc * InstancePtr, u8 Id);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xintc.h:336:1: note: in expansion of macro 'void'
+ void XIntc_Disable(XIntc * InstancePtr, u8 Id);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xintc.h:338:1: note: in expansion of macro 'void'
+ void XIntc_Acknowledge(XIntc * InstancePtr, u8 Id);
+ ^~~~
+In file included from ../src/helloworld.c:99:
+../src/xintc.h:340:1: error: expected declaration specifiers before 'XIntc_Config'
+ XIntc_Config *XIntc_LookupConfig(u16 DeviceId);
+ ^~~~~~~~~~~~
+../src/xintc.h:342:30: error: expected declaration specifiers or '...' before 'XIntc'
+ int XIntc_ConnectFastHandler(XIntc *InstancePtr, u8 Id,
+                              ^~~~~
+../src/xintc.h:343:5: error: unknown type name 'XFastInterruptHandler'; did you mean 'XInterruptHandler'?
+     XFastInterruptHandler Handler);
+     ^~~~~~~~~~~~~~~~~~~~~
+     XInterruptHandler
+In file included from ../src/helloworld.c:98:
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xintc.h:344:1: note: in expansion of macro 'void'
+ void XIntc_SetNormalIntrMode(XIntc *InstancePtr, u8 Id);
+ ^~~~
+In file included from ../src/helloworld.c:99:
+../src/xintc.h:346:25: error: expected declaration specifiers or '...' before 'XIntc'
+ int XIntc_TriggerSwIntr(XIntc * InstancePtr, u8 Id);
+                         ^~~~~
+In file included from ../src/helloworld.c:98:
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xintc.h:350:1: note: in expansion of macro 'void'
+ void XIntc_VoidInterruptHandler(void);
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/xintc.h:351:1: note: in expansion of macro 'void'
+ void XIntc_InterruptHandler(XIntc * InstancePtr);
+ ^~~~
+In file included from ../src/helloworld.c:99:
+../src/xintc.h:356:22: error: expected declaration specifiers or '...' before 'XIntc'
+ int XIntc_SetOptions(XIntc * InstancePtr, u32 Options);
+                      ^~~~~
+../src/xintc.h:357:22: error: expected declaration specifiers or '...' before 'XIntc'
+ u32 XIntc_GetOptions(XIntc * InstancePtr);
+                      ^~~~~
+../src/xintc.h:362:20: error: expected declaration specifiers or '...' before 'XIntc'
+ int XIntc_SelfTest(XIntc * InstancePtr);
+                    ^~~~~
+../src/xintc.h:363:24: error: expected declaration specifiers or '...' before 'XIntc'
+ int XIntc_SimulateIntr(XIntc * InstancePtr, u8 Id);
+                        ^~~~~
+../src/helloworld.c:101:14: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'InterruptController'
+ static XIntc InterruptController;
+              ^~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:102:16: error: storage class specified for parameter 'AGVPotentio'
+ static XSysMon AGVPotentio;
+                ^~~~~~~~~~~
+../src/helloworld.c:104:1: error: parameter 'dataOK' is initialized
+ float dataOK=0;
+ ^~~~~
+In file included from ../src/helloworld.c:98:
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/helloworld.c:105:1: note: in expansion of macro 'void'
+ void Potentio_InterruptHandler(void*CallBackRef,unsigned int EventData)
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/helloworld.c:111:1: note: in expansion of macro 'void'
+ void InitializePotentio()
+ ^~~~
+../src/xsysmon.h:482:14: error: expected declaration specifiers before 'InitializePotentio'
+ #define void InitializePotentio()
+              ^~~~~~~~~~~~~~~~~~
+../src/helloworld.c:122:1: note: in expansion of macro 'void'
+ void SetupIntterupts()
+ ^~~~
+../src/helloworld.c:133:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../src/helloworld.c:104:7: error: declaration for parameter 'dataOK' but no such parameter
+ float dataOK=0;
+       ^~~~~~
+../src/helloworld.c:103:7: error: declaration for parameter 'Value' but no such parameter
+ float Value;
+       ^~~~~
+../src/helloworld.c:102:16: error: declaration for parameter 'AGVPotentio' but no such parameter
+ static XSysMon AGVPotentio;
+                ^~~~~~~~~~~
+In file included from ../src/helloworld.c:99:
+../src/xintc.h:317:3: error: declaration for parameter 'XIntc' but no such parameter
+ } XIntc;
+   ^~~~~
+../src/xintc.h:303:3: error: declaration for parameter 'XIntc_Config' but no such parameter
+ } XIntc_Config;
+   ^~~~~~~~~~~~
+In file included from ../src/xintc.h:221,
+                 from ../src/helloworld.c:99:
+../../Kaef_bsp/microblaze_0/include/xintc_l.h:165:3: error: declaration for parameter 'XIntc_VectorTableEntry' but no such parameter
+ } XIntc_VectorTableEntry;
+   ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/helloworld.c:98:
+../src/xsysmon.h:644:5: error: declaration for parameter 'XSysMon_IntrGetStatus' but no such parameter
+ u32 XSysMon_IntrGetStatus(XSysMon *InstancePtr);
+     ^~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:642:5: error: declaration for parameter 'XSysMon_IntrGetEnabled' but no such parameter
+ u32 XSysMon_IntrGetEnabled(XSysMon *InstancePtr);
+     ^~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:632:5: error: declaration for parameter 'XSysMon_SelfTest' but no such parameter
+ int XSysMon_SelfTest(XSysMon *InstancePtr);
+     ^~~~~~~~~~~~~~~~
+../src/xsysmon.h:619:5: error: declaration for parameter 'XSysMon_GetOverTemp' but no such parameter
+ u16 XSysMon_GetOverTemp(XSysMon *InstancePtr);
+     ^~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:616:5: error: declaration for parameter 'XSysMon_GetAlarmThreshold' but no such parameter
+ u16 XSysMon_GetAlarmThreshold(XSysMon *InstancePtr, u8 AlarmThrReg);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:613:5: error: declaration for parameter 'XSysMon_GetSeqAcqTime' but no such parameter
+ u32 XSysMon_GetSeqAcqTime(XSysMon *InstancePtr);
+     ^~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:612:5: error: declaration for parameter 'XSysMon_SetSeqAcqTime' but no such parameter
+ int XSysMon_SetSeqAcqTime(XSysMon *InstancePtr, u32 AcqCyclesChMask);
+     ^~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:610:5: error: declaration for parameter 'XSysMon_GetSeqInputMode' but no such parameter
+ u32 XSysMon_GetSeqInputMode(XSysMon *InstancePtr);
+     ^~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:609:5: error: declaration for parameter 'XSysMon_SetSeqInputMode' but no such parameter
+ int XSysMon_SetSeqInputMode(XSysMon *InstancePtr, u32 InputModeChMask);
+     ^~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:607:5: error: declaration for parameter 'XSysMon_GetSeqAvgEnables' but no such parameter
+ u64 XSysMon_GetSeqAvgEnables(XSysMon *InstancePtr);
+     ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:606:5: error: declaration for parameter 'XSysMon_SetSeqAvgEnables' but no such parameter
+ int XSysMon_SetSeqAvgEnables(XSysMon *InstancePtr, u64 AvgEnableChMask);
+     ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:604:5: error: declaration for parameter 'XSysMon_GetSeqChEnables' but no such parameter
+ u64 XSysMon_GetSeqChEnables(XSysMon *InstancePtr);
+     ^~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:603:5: error: declaration for parameter 'XSysMon_SetSeqChEnables' but no such parameter
+ int XSysMon_SetSeqChEnables(XSysMon *InstancePtr, u64 ChEnableMask);
+     ^~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:601:4: error: declaration for parameter 'XSysMon_GetAdcClkDivisor' but no such parameter
+ u8 XSysMon_GetAdcClkDivisor(XSysMon *InstancePtr);
+    ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:595:4: error: declaration for parameter 'XSysMon_GetSequencerMode' but no such parameter
+ u8 XSysMon_GetSequencerMode(XSysMon *InstancePtr);
+    ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:592:5: error: declaration for parameter 'XSysMon_GetCalibEnables' but no such parameter
+ u16 XSysMon_GetCalibEnables(XSysMon *InstancePtr);
+     ^~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:589:5: error: declaration for parameter 'XSysMon_GetAlarmEnables' but no such parameter
+ u32 XSysMon_GetAlarmEnables(XSysMon *InstancePtr);
+     ^~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:584:5: error: declaration for parameter 'XSysMon_SetSingleChParams' but no such parameter
+ int XSysMon_SetSingleChParams(XSysMon *InstancePtr, u8 Channel,
+     ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:582:4: error: declaration for parameter 'XSysMon_GetAvg' but no such parameter
+ u8 XSysMon_GetAvg(XSysMon *InstancePtr);
+    ^~~~~~~~~~~~~~
+../src/xsysmon.h:579:5: error: declaration for parameter 'XSysMon_GetMinMaxMeasurement' but no such parameter
+ u16 XSysMon_GetMinMaxMeasurement(XSysMon *InstancePtr, u8 MeasurementType);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:577:5: error: declaration for parameter 'XSysMon_GetCalibCoefficient' but no such parameter
+ u16 XSysMon_GetCalibCoefficient(XSysMon *InstancePtr, u8 CoeffType);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:575:5: error: declaration for parameter 'XSysMon_GetAdcData' but no such parameter
+ u16 XSysMon_GetAdcData(XSysMon *InstancePtr, u8 Channel);
+     ^~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:569:5: error: declaration for parameter 'XSysMon_GetAlarmOutputStatus' but no such parameter
+ u32 XSysMon_GetAlarmOutputStatus(XSysMon *InstancePtr);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/xsysmon.h:567:5: error: declaration for parameter 'XSysMon_GetStatus' but no such parameter
+ u32 XSysMon_GetStatus(XSysMon *InstancePtr);
+     ^~~~~~~~~~~~~~~~~
+../src/helloworld.c:144:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+
+15:57:02 Build Finished (took 1s.976ms)
+

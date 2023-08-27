@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# updatemem v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# 
+# Start of session at: Tue Jun 13 18:49:47 2023
+# Process ID: 23200
+# Current directory: D:/XILINX2019/arty_base
+# Command line: updatemem.exe -mode batch -source D:/XILINX2019/SDK/2019.1/scripts/updatemem/main.tcl -notrace -tclargs -meminfo D:/XILINX2019/arty_base/arty_base.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.mmi -data D:/XILINX2019/SDK/2019.1/data/embeddedsw/lib/microblaze/mb_bootloop_le.elf -proc design_1_i/microblaze_0 -bit D:/XILINX2019/arty_base/arty_base.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit -out D:/XILINX2019/arty_base/arty_base.sdk/design_1_wrapper_hw_platform_0/download.bit -force
+# Log file: D:/XILINX2019/arty_base/updatemem.log
+# Journal file: D:/XILINX2019/arty_base\updatemem.jou
+#-----------------------------------------------------------
+source D:/XILINX2019/SDK/2019.1/scripts/updatemem/main.tcl -notrace
+ Loading bitfile D:/XILINX2019/arty_base/arty_base.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+Loading data files...
+Updating memory content...
+Creating bitstream...
+Writing bitstream D:/XILINX2019/arty_base/arty_base.sdk/design_1_wrapper_hw_platform_0/download.bit...
+  update_mem: Time (s): cpu = 00:00:05 ; elapsed = 00:00:22 . Memory (MB): peak = 525.098 ; gain = 433.684
+INFO: [Common 17-206] Exiting updatemem at Tue Jun 13 18:50:09 2023...

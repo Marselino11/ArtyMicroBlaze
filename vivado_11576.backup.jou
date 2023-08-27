@@ -1,0 +1,49 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Jun 13 11:58:34 2023
+# Process ID: 11576
+# Current directory: D:/XILINX2019/arty_base
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16044 D:\XILINX2019\arty_base\arty_base.xpr
+# Log file: D:/XILINX2019/arty_base/vivado.log
+# Journal file: D:/XILINX2019/arty_base\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/XILINX2019/arty_base/arty_base.xpr
+update_compile_order -fileset sources_1
+launch_sdk -workspace D:/XILINX2019/arty_base/arty_base.sdk -hwspec D:/XILINX2019/arty_base/arty_base.sdk/design_1_wrapper.hdf
+close_project
+open_project D:/XILINX2019/adcx/adcx.xpr
+update_compile_order -fileset sources_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {D:/XILINX2019/adcx/adcx.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {D:/XILINX2019/adcx/adcx.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {D:/XILINX2019/adcx/adcx.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+open_run impl_1
+report_power -name {power_1}
+create_hw_cfgmem -hw_device [lindex [get_hw_devices xc7a35t_0] 0] [lindex [get_cfgmem_parts {28f00am29ew-bpi-x16}] 0]
+set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+write_csv D:/XILINX2019/adcx/impl_1.csv -force
+open_project D:/XILINX2019/arty_base/arty_base.xpr
+current_project adcx
+close_project
+update_compile_order -fileset sources_1
+launch_sdk -workspace D:/XILINX2019/arty_base/arty_base.sdk -hwspec D:/XILINX2019/arty_base/arty_base.sdk/design_1_wrapper.hdf

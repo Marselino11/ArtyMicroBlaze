@@ -1,0 +1,52 @@
+10:06:38 **** Incremental Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_world_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'initLightSensor':
+../src/helloworld.c:61:36: error: 'XPAR_LIGHT_SENSOR_0_DEVICE_ID' undeclared (first use in this function); did you mean 'XPAR_MIG_7SERIES_0_DEVICE_ID'?
+     XGpio_Initialize(&lightSensor, XPAR_LIGHT_SENSOR_0_DEVICE_ID);
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    XPAR_MIG_7SERIES_0_DEVICE_ID
+../src/helloworld.c:61:36: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c: In function 'initKalmanFilter':
+../src/helloworld.c:66:37: error: 'XPAR_KALMAN_FILTER_0_DEVICE_ID' undeclared (first use in this function); did you mean 'XPAR_AXI_TIMER_0_DEVICE_ID'?
+     XGpio_Initialize(&kalmanFilter, XPAR_KALMAN_FILTER_0_DEVICE_ID);
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                     XPAR_AXI_TIMER_0_DEVICE_ID
+../src/helloworld.c: In function 'readLightSensor':
+../src/helloworld.c:54:27: error: 'XPAR_LIGHT_SENSOR_0_S00_AXI_BASEADDR' undeclared (first use in this function); did you mean 'XPAR_MIG7SERIES_0_BASEADDR'?
+ #define LIGHT_SENSOR_ADDR XPAR_LIGHT_SENSOR_0_S00_AXI_BASEADDR
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:54:27: note: in definition of macro 'LIGHT_SENSOR_ADDR'
+ #define LIGHT_SENSOR_ADDR XPAR_LIGHT_SENSOR_0_S00_AXI_BASEADDR
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c: In function 'writeKalmanFilter':
+../src/helloworld.c:55:28: error: 'XPAR_KALMAN_FILTER_0_S00_AXI_BASEADDR' undeclared (first use in this function); did you mean 'XPAR_AXI_QUAD_SPI_0_AXI4_BASEADDR'?
+ #define KALMAN_FILTER_ADDR XPAR_KALMAN_FILTER_0_S00_AXI_BASEADDR
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:55:28: note: in definition of macro 'KALMAN_FILTER_ADDR'
+ #define KALMAN_FILTER_ADDR XPAR_KALMAN_FILTER_0_S00_AXI_BASEADDR
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:55:28: error: 'XPAR_KALMAN_FILTER_0_S00_AXI_BASEADDR' undeclared (first use in this function); did you mean 'XPAR_AXI_QUAD_SPI_0_AXI4_BASEADDR'?
+ #define KALMAN_FILTER_ADDR XPAR_KALMAN_FILTER_0_S00_AXI_BASEADDR
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:55:28: note: in definition of macro 'KALMAN_FILTER_ADDR'
+ #define KALMAN_FILTER_ADDR XPAR_KALMAN_FILTER_0_S00_AXI_BASEADDR
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:91:9: warning: implicit declaration of function 'usleep'; did you mean 'fseek'? [-Wimplicit-function-declaration]
+         usleep(1000000); // Delay antar pembacaan
+         ^~~~~~
+         fseek
+../src/helloworld.c:94:5: error: expected declaration or statement at end of input
+     return 0;
+     ^~~~~~
+../src/helloworld.c: In function 'readLightSensor':
+../src/helloworld.c:72:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/subdir.mk:32: src/helloworld.o] Error 1
+
+10:06:38 Build Finished (took 463ms)
+

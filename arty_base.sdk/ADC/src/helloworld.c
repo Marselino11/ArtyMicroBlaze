@@ -1,0 +1,133 @@
+/******************************************************************************
+*
+* Copyright (C) 2009 - 2014 Xilinx, Inc.  All rights reserved.
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* Use of the Software is limited solely to applications:
+* (a) running on a Xilinx device, or
+* (b) that interact with a Xilinx device through a bus or interconnect.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+* XILINX  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+* OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* Except as contained in this notice, the name of the Xilinx shall not be used
+* in advertising or otherwise to promote the sale, use or other dealings in
+* this Software without prior written authorization from Xilinx.
+*
+******************************************************************************/
+
+/*
+ * helloworld.c: simple test application
+ *
+ * This application configures UART 16550 to baud rate 9600.
+ * PS7 UART (Zynq) is not initialized by this application, since
+ * bootrom/bsp configures it to baud rate 115200
+ *
+ * ------------------------------------------------
+ * | UART TYPE   BAUD RATE                        |
+ * ------------------------------------------------
+ *   uartns550   9600
+ *   uartlite    Configurable only in HW design
+ *   ps7_uart    115200 (configured by bootrom/bsp)
+ */
+
+#include <stdio.h>
+#include <math.h>
+
+// Inisialisasi parameter Kalman
+float A[2][2] = {{1.0, 0.0}, {0.0, 1.0}};     // Matriks transisi keadaan
+float C[2][2] = {{1.0, 0.0}, {0.0, 1.0}};     // Matriks pengukuran
+float Q[2][2] = {{0.0001, 0.0}, {0.0, 0.0001}};  // Covariance noise proses (diperbarui)
+float R[2][2] = {{0.001, 0.0}, {0.0, 0.001}};   // Covariance noise pengukuran (diperbarui)
+
+// Inisialisasi variabel keadaan
+float xy[2] = {0.0, 0.0};  // Estimasi awal keadaan (disesuaikan dengan nilai pengukuran awal)
+float P[2][2] = {{1.0, 0.0}, {0.0, 1.0}};     // Covariance awal keadaan
+
+// Fungsi filter Kalman
+void kalman_filter(float measurement[2], float filtered_measurement[2]) {
+    // Prediksi
+    float xy_pred[2] = {
+        A[0][0] * xy[0] + A[0][1] * xy[1],
+        A[1][0] * xy[0] + A[1][1] * xy[1]
+    };
+
+    float P_pred[2][2] = {
+        {A[0][0] * P[0][0] + A[0][1] * P[1][0], A[0][0] * P[0][1] + A[0][1] * P[1][1]},
+        {A[1][0] * P[0][0] + A[1][1] * P[1][0], A[1][0] * P[0][1] + A[1][1] * P[1][1]}
+    };
+
+    // Update
+    float K[2][2];
+    float temp1 = C[0][0] * P_pred[0][0] + C[0][1] * P_pred[1][0];
+    float temp2 = C[1][0] * P_pred[0][0] + C[1][1] * P_pred[1][0];
+
+    // Check if the denominator is not zero
+    if (temp1 != 0 && temp2 != 0) {
+        K[0][0] = P_pred[0][0] * C[0][0] / temp1;
+        K[0][1] = P_pred[0][1] * C[1][0] / temp2;
+        K[1][0] = P_pred[1][0] * C[0][0] / temp1;
+        K[1][1] = P_pred[1][1] * C[1][0] / temp2;
+    } else {
+        // Set K to zero or a default value
+        K[0][0] = 0.0;
+        K[0][1] = 0.0;
+        K[1][0] = 0.0;
+        K[1][1] = 0.0;
+    }
+
+    float residual[2] = {
+        measurement[0] - C[0][0] * xy_pred[0] - C[0][1] * xy_pred[1],
+        measurement[1] - C[1][0] * xy_pred[0] - C[1][1] * xy_pred[1]
+    };
+
+    xy[0] = xy_pred[0] + K[0][0] * residual[0];
+    xy[1] = xy_pred[1] + K[1][0] * residual[0];
+
+    P[0][0] = (1 - K[0][0] * C[0][0]) * P_pred[0][0];
+    P[0][1] = (1 - K[0][0] * C[0][1]) * P_pred[0][1];
+    P[1][0] = (1 - K[1][0] * C[1][0]) * P_pred[1][0];
+    P[1][1] = (1 - K[1][0] * C[1][1]) * P_pred[1][1];
+
+    filtered_measurement[0] = xy[0];
+    filtered_measurement[1] = xy[1];
+}
+
+int main() {
+    // Meminta pengguna untuk menginput angka
+    printf("Masukkan angka pengukuran (x y):\n");
+
+    float measurement[2];
+    while (scanf("%f %f", &measurement[0], &measurement[1]) == 2) {
+        // Proses filter Kalman untuk pengukuran saat ini
+        float filtered_measurement[2];
+        kalman_filter(measurement, filtered_measurement);
+
+        // Penyesuaian nilai filtered_measurement
+        float diff1 = measurement[0] - filtered_measurement[0];
+        float diff2 = measurement[1] - filtered_measurement[1];
+        filtered_measurement[0] += diff1 * 0.9;
+        filtered_measurement[1] += diff2 * 0.9;
+
+        printf("Pengukuran: %.4f, %.4f, Filter Kalman: %.4f, %.4f\n", measurement[0], measurement[1], filtered_measurement[0], filtered_measurement[1]);
+
+        // Meminta pengguna untuk menginput data pengukuran berikutnya atau keluar dengan input non-angka
+        printf("Masukkan angka pengukuran berikutnya (x y) atau masukkan karakter non-angka untuk keluar:\n");
+    }
+
+    return 0;
+}
